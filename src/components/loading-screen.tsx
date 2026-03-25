@@ -5,12 +5,12 @@ import { useState, useEffect, useLayoutEffect, useCallback, useRef } from 'react
 import Image from 'next/image'
 
 const darkThemeVariants = [
-  '/images/logo_blue.svg',
-  '/images/logo_light-green.svg',
-  '/images/logo_breeze.svg',
-  '/images/logo_light-blue.svg',
-  '/images/logo_saladik.svg',
-  '/images/logo_black-green.svg',
+  '/images/logo_blue.svg?v=2',
+  '/images/logo_light-green.svg?v=2',
+  '/images/logo_breeze.svg?v=2',
+  '/images/logo_light-blue.svg?v=2',
+  '/images/logo_saladik.svg?v=2',
+  '/images/logo_black-green.svg?v=2',
 ]
 
 interface LoadingScreenProps {
