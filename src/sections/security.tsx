@@ -43,7 +43,7 @@ const BLOCKS = [
 export function Security() {
   return (
     <section id="security" className="py-32 px-6 overflow-hidden relative">
-      <IsometricBoxes />
+      <IsometricBoxes className="opacity-40" />
       <div className="max-w-[1200px] mx-auto relative z-10">
         <AnimatedSection>
           <SectionLabel>Security</SectionLabel>
@@ -62,7 +62,7 @@ export function Security() {
                   <h3 className="font-mono text-base uppercase tracking-wide text-white mb-3">
                     {block.title}
                   </h3>
-                  <p className="font-mono text-sm leading-relaxed text-white/30 max-w-lg [&>strong]:text-white [&>strong]:font-normal">
+                  <p className="font-mono text-sm leading-relaxed text-white/50 max-w-lg [&>strong]:text-white [&>strong]:font-normal">
                     {block.description}
                   </p>
                 </div>
