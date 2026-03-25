@@ -96,7 +96,7 @@ export function Hero() {
           <Button variant="filled" href="#waitlist">
             Join Waitlist
           </Button>
-          <Button variant="ghost" href="https://docs.etny.io">
+          <Button variant="ghost" href="#">
             Read Docs →
           </Button>
           <Button variant="filled" onClick={startWarp}>

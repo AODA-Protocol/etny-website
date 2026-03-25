@@ -7,7 +7,7 @@ const NAV_ITEMS = [
   { label: "Protocol", href: "#how-it-works" },
   { label: "Security", href: "#security" },
   { label: "Roadmap", href: "#roadmap" },
-  { label: "Docs", href: "https://docs.etny.io" },
+  { label: "Docs", href: "#" },
 ];
 
 export function Header() {

@@ -10,17 +10,17 @@ const COLUMNS = [
   {
     title: "Community",
     links: [
-      { label: "Twitter", href: "https://twitter.com/etny_protocol" },
-      { label: "Telegram", href: "https://t.me/etny_protocol" },
-      { label: "Discord", href: "https://discord.gg/etny" },
+      { label: "Twitter", href: "#" },
+      { label: "Telegram", href: "#" },
+      { label: "Discord", href: "#" },
     ],
   },
   {
     title: "Developers",
     links: [
-      { label: "GitHub", href: "https://github.com/ETNY-Protocol" },
-      { label: "Docs", href: "https://docs.etny.io" },
-      { label: "API Reference", href: "https://docs.etny.io/api" },
+      { label: "GitHub", href: "#" },
+      { label: "Docs", href: "#" },
+      { label: "API Reference", href: "#" },
     ],
   },
 ];
