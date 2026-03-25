@@ -3,13 +3,11 @@
 import { SectionLabel } from "@/components/section-label";
 import { SectionTitle } from "@/components/section-title";
 import { AnimatedSection } from "@/components/animated-section";
-import { IconGasFees, IconTrace, IconSpeed, IconKey } from "@/components/feature-icons";
 
 const FEATURES = [
   {
     value: "0",
     label: "Gas fees",
-    icon: <IconGasFees />,
     description: (
       <>
         <strong>No blockchain transaction</strong> during transfer
@@ -19,7 +17,6 @@ const FEATURES = [
   {
     value: "0",
     label: "On-chain trace",
-    icon: <IconTrace />,
     description: (
       <>
         Address stays the same. <strong>No from→to visible</strong>
@@ -29,7 +26,6 @@ const FEATURES = [
   {
     value: "~2s",
     label: "Transfer time",
-    icon: <IconSpeed />,
     description: (
       <>
         MPC resharing completes in <strong>under 2 seconds</strong>
@@ -39,7 +35,6 @@ const FEATURES = [
   {
     value: "Never",
     label: "Key exposure",
-    icon: <IconKey />,
     description: (
       <>
         Private key <strong>never exists in whole form</strong> — anywhere, ever
@@ -60,10 +55,7 @@ export function Features() {
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {FEATURES.map((feature, i) => (
             <AnimatedSection key={feature.label} delay={i * 0.1}>
-              <div className="p-6 rounded-[5px] border border-white/10 bg-surface-0 hover:border-white/20 transition-all group">
-                <div className="mb-5 opacity-70 group-hover:opacity-100 transition-opacity duration-300">
-                  {feature.icon}
-                </div>
+              <div className="p-6 rounded-[5px] border border-white/10 bg-surface-0 hover:border-white/20 transition-colors">
                 <span className="font-mono text-xs uppercase tracking-wide text-white/30">
                   {feature.label}
                 </span>
