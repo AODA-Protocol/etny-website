@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import { SectionLabel } from "@/components/section-label";
 import { Button } from "@/components/button";
+import { useWarp } from "@/components/warp-transition";
 
 export function Hero() {
+  const { startWarp } = useWarp();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6">
       {/* Purple glow */}
@@ -52,6 +55,9 @@ export function Hero() {
           </Button>
           <Button variant="ghost" href="https://docs.etny.io">
             Read Docs →
+          </Button>
+          <Button variant="filled" onClick={startWarp}>
+            Launch App
           </Button>
         </motion.div>
       </div>

@@ -5,10 +5,11 @@ import { Features } from "@/sections/features";
 import { Security } from "@/sections/security";
 import { Roadmap } from "@/sections/roadmap";
 import { Footer } from "@/sections/footer";
+import { WarpProvider } from "@/components/warp-transition";
 
 export default function Home() {
   return (
-    <>
+    <WarpProvider>
       <Header />
       <main>
         <Hero />
@@ -18,6 +19,6 @@ export default function Home() {
         <Roadmap />
       </main>
       <Footer />
-    </>
+    </WarpProvider>
   );
 }
