@@ -1,7 +1,17 @@
+import { Header } from "@/sections/header";
+import { Hero } from "@/sections/hero";
+import { HowItWorks } from "@/sections/how-it-works";
+import { Features } from "@/sections/features";
+
 export default function Home() {
   return (
-    <main className="min-h-screen flex items-center justify-center">
-      <h1 className="text-4xl font-sans text-white">AODA</h1>
-    </main>
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <HowItWorks />
+        <Features />
+      </main>
+    </>
   );
 }
