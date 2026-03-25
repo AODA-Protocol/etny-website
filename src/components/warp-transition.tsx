@@ -402,7 +402,7 @@ export function WarpProvider({ children }: { children: ReactNode }) {
                   color: 'rgba(255, 255, 255, 0.5)',
                 }}
               >
-                ETNY
+                ETNY PROTOCOL
               </span>
             </motion.div>
           </motion.div>

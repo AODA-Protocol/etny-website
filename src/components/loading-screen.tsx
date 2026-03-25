@@ -200,7 +200,7 @@ export function LoadingScreen({
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.1 }}
             >
-              ETNY
+              ETNY PROTOCOL
             </motion.p>
           )}
         </motion.div>
