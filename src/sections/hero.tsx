@@ -13,8 +13,11 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center justify-center px-6">
       {/* Outer grid with radial fade */}
       <div
-        className="absolute inset-0 bg-grid opacity-80"
+        className="absolute inset-0"
         style={{
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+          backgroundSize: '50px 50px',
+          opacity: 0.8,
           maskImage: 'radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent)',
           WebkitMaskImage: 'radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent)',
         }}
@@ -22,16 +25,13 @@ export function Hero() {
 
       {/* Inner grid with accent tint */}
       <div
-        className="absolute inset-0 bg-grid"
+        className="absolute inset-0"
         style={{
-          maskImage: 'radial-gradient(ellipse 50% 40% at 50% 45%, black, transparent)',
-          WebkitMaskImage: 'radial-gradient(ellipse 50% 40% at 50% 45%, black, transparent)',
-          backgroundImage: `
-            linear-gradient(rgba(114, 162, 240, 0.06) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(114, 162, 240, 0.06) 1px, transparent 1px)
-          `,
+          backgroundImage: 'linear-gradient(rgba(114,162,240,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(114,162,240,0.06) 1px, transparent 1px)',
           backgroundSize: '50px 50px',
           opacity: 0.6,
+          maskImage: 'radial-gradient(ellipse 50% 40% at 50% 45%, black, transparent)',
+          WebkitMaskImage: 'radial-gradient(ellipse 50% 40% at 50% 45%, black, transparent)',
         }}
       />
 
