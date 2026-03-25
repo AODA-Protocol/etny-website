@@ -96,11 +96,8 @@ export function Hero() {
           <Button variant="filled" href="#waitlist">
             Join Waitlist
           </Button>
-          <Button variant="ghost" href="#">
+          <Button variant="ghost" onClick={() => startWarp('/docs')}>
             Read Docs →
-          </Button>
-          <Button variant="filled" onClick={startWarp}>
-            Launch App
           </Button>
           </div>
         </FadeIn>

@@ -5,7 +5,6 @@ import type { ReactNode } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { LOGO_VIEWBOX, LOGO_PATHS, DRAW_ORDER, GLASS_PATHS, measurePathLength } from './logo-path-data'
 
-const APP_URL = 'https://app.etny.io'
 const DURATION = 4500
 
 /* ---- Easings ---- */
@@ -16,7 +15,7 @@ function easeOutCubic(t: number) {
   return 1 - Math.pow(1 - t, 3)
 }
 /* ---- Context ---- */
-const WarpContext = createContext<{ startWarp: () => void }>({ startWarp: () => {} })
+const WarpContext = createContext<{ startWarp: (url?: string) => void }>({ startWarp: () => {} })
 
 export function useWarp() {
   return useContext(WarpContext)
@@ -29,10 +28,13 @@ export function WarpProvider({ children }: { children: ReactNode }) {
   const animationRef = useRef<number>(0)
   const startTimeRef = useRef<number>(0)
 
-  const startWarp = useCallback(() => {
+  const targetUrlRef = useRef<string>('/')
+
+  const startWarp = useCallback((url?: string) => {
+    targetUrlRef.current = url || '/'
     setIsWarping(true)
     setTimeout(() => {
-      window.location.href = APP_URL
+      window.location.href = targetUrlRef.current
     }, DURATION)
   }, [])
 

@@ -2,17 +2,25 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "@/components/button";
+import { useWarp } from "@/components/warp-transition";
 
-const NAV_ITEMS = [
+type NavItem =
+  | { label: string; href: string; warp?: false }
+  | { label: string; warpTo: string; warp: true };
+
+const NAV_ITEMS: NavItem[] = [
   { label: "Protocol", href: "#how-it-works" },
   { label: "Security", href: "#security" },
   { label: "Roadmap", href: "#roadmap" },
-  { label: "Docs", href: "#" },
+  { label: "Docs", warpTo: "/docs", warp: true },
+  { label: "Terms", warpTo: "/terms", warp: true },
+  { label: "Kit", warpTo: "/kit", warp: true },
 ];
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { startWarp } = useWarp();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -33,15 +41,25 @@ export function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {NAV_ITEMS.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="font-mono text-sm uppercase tracking-wide text-white/30 hover:text-white transition-colors"
-            >
-              {item.label}
-            </a>
-          ))}
+          {NAV_ITEMS.map((item) =>
+            item.warp ? (
+              <button
+                key={item.label}
+                onClick={() => startWarp(item.warpTo)}
+                className="font-mono text-sm uppercase tracking-wide text-white/30 hover:text-white transition-colors"
+              >
+                {item.label}
+              </button>
+            ) : (
+              <a
+                key={item.label}
+                href={item.href}
+                className="font-mono text-sm uppercase tracking-wide text-white/30 hover:text-white transition-colors"
+              >
+                {item.label}
+              </a>
+            )
+          )}
           <Button variant="ghost" href="#waitlist">
             Join Waitlist
           </Button>
@@ -75,16 +93,29 @@ export function Header() {
       {mobileOpen && (
         <nav className="md:hidden border-t border-white/10 bg-surface-0/95 backdrop-blur-md">
           <div className="max-w-[1200px] mx-auto px-6 py-4 flex flex-col gap-4">
-            {NAV_ITEMS.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={() => setMobileOpen(false)}
-                className="font-mono text-sm uppercase tracking-wide text-white/60 hover:text-white transition-colors py-1"
-              >
-                {item.label}
-              </a>
-            ))}
+            {NAV_ITEMS.map((item) =>
+              item.warp ? (
+                <button
+                  key={item.label}
+                  onClick={() => {
+                    setMobileOpen(false);
+                    startWarp(item.warpTo);
+                  }}
+                  className="font-mono text-sm uppercase tracking-wide text-white/60 hover:text-white transition-colors py-1 text-left"
+                >
+                  {item.label}
+                </button>
+              ) : (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="font-mono text-sm uppercase tracking-wide text-white/60 hover:text-white transition-colors py-1"
+                >
+                  {item.label}
+                </a>
+              )
+            )}
             <Button variant="ghost" href="#waitlist" onClick={() => setMobileOpen(false)}>
               Join Waitlist
             </Button>
