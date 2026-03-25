@@ -13,8 +13,6 @@ const NAV_ITEMS: NavItem[] = [
   { label: "Security", href: "#security" },
   { label: "Roadmap", href: "#roadmap" },
   { label: "Docs", warpTo: "/docs", warp: true },
-  { label: "Terms", warpTo: "/terms", warp: true },
-  { label: "Kit", warpTo: "/kit", warp: true },
 ];
 
 export function Header() {

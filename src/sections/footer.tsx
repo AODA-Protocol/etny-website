@@ -1,10 +1,19 @@
-const COLUMNS = [
+"use client";
+
+import { useWarp } from "@/components/warp-transition";
+
+type FooterLink =
+  | { label: string; href: string; warp?: false }
+  | { label: string; warpTo: string; warp: true };
+
+const COLUMNS: { title: string; links: FooterLink[] }[] = [
   {
     title: "Protocol",
     links: [
       { label: "How it works", href: "#how-it-works" },
       { label: "Security", href: "#security" },
       { label: "Roadmap", href: "#roadmap" },
+      { label: "Docs", warpTo: "/docs", warp: true },
     ],
   },
   {
@@ -16,16 +25,17 @@ const COLUMNS = [
     ],
   },
   {
-    title: "Developers",
+    title: "Legal & Brand",
     links: [
-      { label: "GitHub", href: "#" },
-      { label: "Docs", href: "#" },
-      { label: "API Reference", href: "#" },
+      { label: "Terms of Use", warpTo: "/terms", warp: true },
+      { label: "Press Kit", warpTo: "/kit", warp: true },
     ],
   },
 ];
 
 export function Footer() {
+  const { startWarp } = useWarp();
+
   return (
     <footer className="relative pt-20 pb-12 px-6">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-accent-purple/5 blur-[120px] pointer-events-none" />
@@ -42,12 +52,21 @@ export function Footer() {
               <ul className="space-y-3">
                 {col.links.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="font-mono text-sm text-white/30 hover:text-white transition-colors"
-                    >
-                      {link.label}
-                    </a>
+                    {link.warp ? (
+                      <button
+                        onClick={() => startWarp(link.warpTo)}
+                        className="font-mono text-sm text-white/30 hover:text-white transition-colors"
+                      >
+                        {link.label}
+                      </button>
+                    ) : (
+                      <a
+                        href={link.href}
+                        className="font-mono text-sm text-white/30 hover:text-white transition-colors"
+                      >
+                        {link.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
