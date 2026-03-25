@@ -10,6 +10,30 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6">
+      {/* Outer grid with radial fade */}
+      <div
+        className="absolute inset-0 bg-grid opacity-80"
+        style={{
+          maskImage: 'radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent)',
+          WebkitMaskImage: 'radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent)',
+        }}
+      />
+
+      {/* Inner grid with accent tint */}
+      <div
+        className="absolute inset-0 bg-grid"
+        style={{
+          maskImage: 'radial-gradient(ellipse 50% 40% at 50% 45%, black, transparent)',
+          WebkitMaskImage: 'radial-gradient(ellipse 50% 40% at 50% 45%, black, transparent)',
+          backgroundImage: `
+            linear-gradient(rgba(114, 162, 240, 0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(114, 162, 240, 0.06) 1px, transparent 1px)
+          `,
+          backgroundSize: '50px 50px',
+          opacity: 0.6,
+        }}
+      />
+
       {/* Purple glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-accent-purple/20 blur-[120px] animate-breathing pointer-events-none" />
 
