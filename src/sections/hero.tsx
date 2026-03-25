@@ -52,9 +52,10 @@ export function Hero() {
         style={{
           background: `linear-gradient(to bottom,
             #0a0a0a 0%,
-            rgba(10,10,15,0.7) 35%,
-            rgba(10,10,15,0.6) 50%,
-            rgba(10,10,15,0.7) 65%,
+            rgba(10,10,15,0.8) 30%,
+            rgba(10,10,15,0.85) 45%,
+            rgba(10,10,15,0.85) 55%,
+            rgba(10,10,15,0.8) 70%,
             #0a0a0a 100%
           )`
         }}
@@ -84,7 +85,7 @@ export function Hero() {
         </motion.h1>
 
         <FadeIn delay={0.4}>
-          <p className="mt-6 font-mono text-base text-white/30 leading-relaxed max-w-xl mx-auto [&>strong]:text-white [&>strong]:font-normal">
+          <p className="mt-6 font-mono text-base text-white/50 leading-relaxed max-w-xl mx-auto [&>strong]:text-white [&>strong]:font-normal">
             <strong>Zero gas.</strong> Zero trace.{" "}
             <strong>~2 seconds.</strong> Powered by MPC resharing inside
             TEE enclaves.
