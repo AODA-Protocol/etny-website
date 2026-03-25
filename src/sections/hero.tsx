@@ -1,10 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 import { SectionLabel } from "@/components/section-label";
 import { Button } from "@/components/button";
 import { useWarp } from "@/components/warp-transition";
 import { FadeIn } from "@/components/fade-in";
+
+const LogoParticles = dynamic(
+  () => import('@/components/3d/logo-particles').then((mod) => mod.LogoParticles),
+  { ssr: false }
+)
 
 export function Hero() {
   const { startWarp } = useWarp();
@@ -35,10 +41,29 @@ export function Hero() {
         }}
       />
 
+      {/* 3D Logo Particles */}
+      <div className="absolute inset-0 z-10">
+        <LogoParticles />
+      </div>
+
+      {/* Gradient overlay for text readability */}
+      <div
+        className="absolute inset-0 z-20 pointer-events-none"
+        style={{
+          background: `linear-gradient(to bottom,
+            #0a0a0a 0%,
+            rgba(10,10,15,0.7) 35%,
+            rgba(10,10,15,0.6) 50%,
+            rgba(10,10,15,0.7) 65%,
+            #0a0a0a 100%
+          )`
+        }}
+      />
+
       {/* Purple glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-accent-purple/20 blur-[120px] animate-breathing pointer-events-none" />
 
-      <div className="relative text-center max-w-3xl mx-auto">
+      <div className="relative z-30 text-center max-w-3xl mx-auto pointer-events-none">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -67,7 +92,7 @@ export function Hero() {
         </FadeIn>
 
         <FadeIn delay={0.6}>
-          <div className="mt-10 flex items-center justify-center gap-4 flex-wrap">
+          <div className="mt-10 flex items-center justify-center gap-4 flex-wrap pointer-events-auto">
           <Button variant="filled" href="#waitlist">
             Join Waitlist
           </Button>
