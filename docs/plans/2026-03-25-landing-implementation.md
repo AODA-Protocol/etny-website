@@ -1,8 +1,8 @@
-# AODA Landing Page Implementation Plan
+# ETNY Landing Page Implementation Plan
 
 > **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
 
-**Goal:** Build a Delora-style dark landing page for the AODA protocol with 6 sections, scroll animations, and Geist typography.
+**Goal:** Build a Delora-style dark landing page for the ETNY protocol with 6 sections, scroll animations, and Geist typography.
 
 **Architecture:** Next.js 15 App Router with static export (SSG). Single-page layout with section components. Framer Motion for scroll-triggered animations. Tailwind CSS 4 for styling with custom design tokens.
 
@@ -21,7 +21,7 @@
 
 **Step 1: Create Next.js project with Tailwind**
 
-Run from `/Users/daniillogachev/Ma project/AODA-website`:
+Run from `/Users/daniillogachev/Ma project/ETNY-website`:
 ```bash
 pnpm dlx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --no-import-alias --use-pnpm
 ```
@@ -95,7 +95,7 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AODA — Private Wallet Transfers",
+  title: "ETNY — Private Wallet Transfers",
   description:
     "Transfer crypto wallet ownership off-chain. Zero gas. Zero trace. Powered by MPC and TEE.",
 };
@@ -158,7 +158,7 @@ Replace `src/app/page.tsx`:
 export default function Home() {
   return (
     <main className="min-h-screen flex items-center justify-center">
-      <h1 className="text-4xl font-sans text-white">AODA</h1>
+      <h1 className="text-4xl font-sans text-white">ETNY</h1>
     </main>
   );
 }
@@ -168,7 +168,7 @@ Run:
 ```bash
 pnpm dev
 ```
-Expected: Page loads at localhost:3000 with "AODA" centered in Geist font on black bg.
+Expected: Page loads at localhost:3000 with "ETNY" centered in Geist font on black bg.
 
 **Step 7: Commit**
 
@@ -330,7 +330,7 @@ const NAV_ITEMS = [
   { label: "Protocol", href: "#how-it-works" },
   { label: "Security", href: "#security" },
   { label: "Roadmap", href: "#roadmap" },
-  { label: "Docs", href: "https://docs.aoda.io" },
+  { label: "Docs", href: "https://docs.etny.io" },
 ];
 
 export function Header() {
@@ -350,7 +350,7 @@ export function Header() {
     >
       <div className="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" className="font-mono text-lg font-semibold tracking-wider">
-          AODA
+          ETNY
         </a>
         <nav className="hidden md:flex items-center gap-8">
           {NAV_ITEMS.map((item) => (
@@ -428,7 +428,7 @@ export function Hero() {
           <Button variant="filled" href="#waitlist">
             Join Waitlist
           </Button>
-          <Button variant="ghost" href="https://docs.aoda.io">
+          <Button variant="ghost" href="https://docs.etny.io">
             Read Docs →
           </Button>
         </motion.div>
@@ -660,7 +660,7 @@ export function Features() {
       <div className="max-w-[1200px] mx-auto">
         <AnimatedSection>
           <SectionLabel>Features</SectionLabel>
-          <SectionTitle>Why AODA</SectionTitle>
+          <SectionTitle>Why ETNY</SectionTitle>
         </AnimatedSection>
 
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -1084,17 +1084,17 @@ const COLUMNS = [
   {
     title: "Community",
     links: [
-      { label: "Twitter", href: "https://twitter.com/aoda_protocol" },
-      { label: "Telegram", href: "https://t.me/aoda_protocol" },
-      { label: "Discord", href: "https://discord.gg/aoda" },
+      { label: "Twitter", href: "https://twitter.com/etny_protocol" },
+      { label: "Telegram", href: "https://t.me/etny_protocol" },
+      { label: "Discord", href: "https://discord.gg/etny" },
     ],
   },
   {
     title: "Developers",
     links: [
-      { label: "GitHub", href: "https://github.com/AODA-Protocol" },
-      { label: "Docs", href: "https://docs.aoda.io" },
-      { label: "API Reference", href: "https://docs.aoda.io/api" },
+      { label: "GitHub", href: "https://github.com/ETNY-Protocol" },
+      { label: "Docs", href: "https://docs.etny.io" },
+      { label: "API Reference", href: "https://docs.etny.io/api" },
     ],
   },
 ];
@@ -1135,10 +1135,10 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <span className="font-mono text-sm font-semibold tracking-wider">
-            AODA
+            ETNY
           </span>
           <span className="font-mono text-xs text-white/30">
-            AODA Protocol 2026. All rights reserved.
+            ETNY Protocol 2026. All rights reserved.
           </span>
         </div>
       </div>
@@ -1189,13 +1189,13 @@ Expected: All sections render, animations work, responsive layout correct.
 
 ```bash
 git add -A
-git commit -m "feat: complete AODA landing page — all 6 sections with animations"
+git commit -m "feat: complete ETNY landing page — all 6 sections with animations"
 git push -u origin main
 ```
 
 **Step 4: Deploy to Vercel**
 
-Connect repo `AODA-Protocol/aoda-website` to Vercel via dashboard, or:
+Connect repo `ETNY-Protocol/etny-website` to Vercel via dashboard, or:
 ```bash
 pnpm dlx vercel --yes
 ```

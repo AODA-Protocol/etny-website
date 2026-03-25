@@ -50,7 +50,7 @@ export function Hero() {
           <Button variant="filled" href="#waitlist">
             Join Waitlist
           </Button>
-          <Button variant="ghost" href="https://docs.aoda.io">
+          <Button variant="ghost" href="https://docs.etny.io">
             Read Docs →
           </Button>
         </motion.div>

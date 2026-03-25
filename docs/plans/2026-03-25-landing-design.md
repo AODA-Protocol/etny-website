@@ -1,4 +1,4 @@
-# AODA Website — Landing Page Design
+# ETNY Website — Landing Page Design
 
 **Date:** 2026-03-25
 **Style reference:** delora.build
@@ -38,7 +38,7 @@
 
 ### 1. Header + Hero
 
-**Header** — transparent, fixed. Left: "AODA" logo (monospace). Right: nav links (PROTOCOL, SECURITY, ROADMAP, DOCS) in Geist Mono uppercase. CTA "Join Waitlist" ghost button.
+**Header** — transparent, fixed. Left: "ETNY" logo (monospace). Right: nav links (PROTOCOL, SECURITY, ROADMAP, DOCS) in Geist Mono uppercase. CTA "Join Waitlist" ghost button.
 
 **Hero** — centered on black bg.
 - Bracket label: `[ PROTOCOL ]`
@@ -69,7 +69,7 @@
 ### 3. Key Features
 
 - Label: `[ FEATURES ]`
-- Headline: "Why AODA"
+- Headline: "Why ETNY"
 - 4 cards in a row (2x2 mobile). Dark bg `#0a0a0a`, thin border `rgba(255,255,255,0.1)`, border-radius 5px.
 
 | Card | Large value | Description |
@@ -130,5 +130,5 @@
 | Roadmap | Discord | API Reference |
 
 - Links: 30% opacity, hover → 100% white
-- Bottom: "AODA" logo left, "AODA Protocol 2026. All rights reserved." right, 30% opacity
+- Bottom: "ETNY" logo left, "ETNY Protocol 2026. All rights reserved." right, 30% opacity
 - Subtle purple gradient glow behind footer

@@ -10,17 +10,17 @@ const COLUMNS = [
   {
     title: "Community",
     links: [
-      { label: "Twitter", href: "https://twitter.com/aoda_protocol" },
-      { label: "Telegram", href: "https://t.me/aoda_protocol" },
-      { label: "Discord", href: "https://discord.gg/aoda" },
+      { label: "Twitter", href: "https://twitter.com/etny_protocol" },
+      { label: "Telegram", href: "https://t.me/etny_protocol" },
+      { label: "Discord", href: "https://discord.gg/etny" },
     ],
   },
   {
     title: "Developers",
     links: [
-      { label: "GitHub", href: "https://github.com/AODA-Protocol" },
-      { label: "Docs", href: "https://docs.aoda.io" },
-      { label: "API Reference", href: "https://docs.aoda.io/api" },
+      { label: "GitHub", href: "https://github.com/ETNY-Protocol" },
+      { label: "Docs", href: "https://docs.etny.io" },
+      { label: "API Reference", href: "https://docs.etny.io/api" },
     ],
   },
 ];
