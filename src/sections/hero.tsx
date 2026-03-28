@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import { SectionLabel } from "@/components/section-label";
 import { Button } from "@/components/button";
-import { useWarp } from "@/components/warp-transition";
 import { FadeIn } from "@/components/fade-in";
 
 const LogoParticles = dynamic(
@@ -13,8 +12,6 @@ const LogoParticles = dynamic(
 )
 
 export function Hero() {
-  const { startWarp } = useWarp();
-
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6">
       {/* Outer grid with radial fade */}
@@ -61,8 +58,8 @@ export function Hero() {
         }}
       />
 
-      {/* Purple glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-accent-purple/20 blur-[120px] animate-breathing pointer-events-none" />
+      {/* Golden glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-amber-500/15 blur-[120px] animate-breathing pointer-events-none" />
 
       <div className="relative z-30 text-center max-w-3xl mx-auto pointer-events-none">
         <motion.div
@@ -70,7 +67,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <SectionLabel>Protocol</SectionLabel>
+          <SectionLabel>Real World Assets</SectionLabel>
         </motion.div>
 
         <motion.h1
@@ -79,26 +76,25 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          Transfer wallet ownership.
+          Own real gold.
           <br />
-          Off-chain.
+          Digitally.
         </motion.h1>
 
         <FadeIn delay={0.4}>
           <p className="mt-6 font-mono text-base text-white/50 leading-relaxed max-w-xl mx-auto [&>strong]:text-white [&>strong]:font-normal">
-            <strong>Zero gas.</strong> Zero trace.{" "}
-            <strong>~2 seconds.</strong> Powered by MPC resharing inside
-            TEE enclaves.
+            <strong>Buy, sell, and send</strong> real gold in seconds.{" "}
+            <strong>Backed by physical reserves.</strong> Starting from $5.
           </p>
         </FadeIn>
 
         <FadeIn delay={0.6}>
           <div className="mt-10 flex items-center justify-center gap-4 flex-wrap pointer-events-auto">
-          <Button variant="filled" href="#waitlist">
-            Join Waitlist
+          <Button variant="filled" href="https://app.etny.com">
+            Launch App
           </Button>
-          <Button variant="ghost" onClick={() => startWarp('/docs')}>
-            Read Docs →
+          <Button variant="ghost" href="#how-it-works">
+            Learn more ↓
           </Button>
           </div>
         </FadeIn>
