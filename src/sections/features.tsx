@@ -6,38 +6,42 @@ import { AnimatedSection } from "@/components/animated-section";
 
 const FEATURES = [
   {
-    value: "0",
-    label: "Gas fees",
+    value: "Real",
+    label: "Physical Gold",
     description: (
       <>
-        <strong>No blockchain transaction</strong> during transfer
+        Not paper gold, not derivatives. Your tokens are backed by{" "}
+        <strong>real gold in audited vaults.</strong>
       </>
     ),
   },
   {
-    value: "0",
-    label: "On-chain trace",
+    value: "Instant",
+    label: "Liquidity",
     description: (
       <>
-        Address stays the same. <strong>No from→to visible</strong>
+        Buy or sell anytime. <strong>Fiat back to your card</strong> in seconds,
+        not days like traditional banks.
       </>
     ),
   },
   {
-    value: "~2s",
-    label: "Transfer time",
+    value: "Proof",
+    label: "Of Reserves",
     description: (
       <>
-        MPC resharing completes in <strong>under 2 seconds</strong>
+        Regular audits, <strong>transparent reserves</strong>. Always know your
+        gold is there.
       </>
     ),
   },
   {
-    value: "Never",
-    label: "Key exposure",
+    value: "$5",
+    label: "Minimum",
     description: (
       <>
-        Private key <strong>never exists in whole form</strong> — anywhere, ever
+        Start with as little as <strong>$5</strong>. No minimum investment, no
+        barriers to entry.
       </>
     ),
   },
@@ -48,8 +52,8 @@ export function Features() {
     <section className="py-32 px-6">
       <div className="max-w-[1200px] mx-auto">
         <AnimatedSection>
-          <SectionLabel>Features</SectionLabel>
-          <SectionTitle>Why ETNY</SectionTitle>
+          <SectionLabel>Why ETNY</SectionLabel>
+          <SectionTitle>Gold ownership, reimagined</SectionTitle>
         </AnimatedSection>
 
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

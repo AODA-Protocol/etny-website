@@ -7,32 +7,41 @@ import { AnimatedSection } from "@/components/animated-section";
 const STEPS = [
   {
     number: "01",
-    title: "Connect",
+    title: "Sign Up",
     description: (
       <>
-        Receiver generates an <strong>ephemeral invite link</strong>. Sender
-        scans QR or opens link. <strong>No accounts. No registration.</strong>
+        Create an account with <strong>email or Google</strong>. Your wallet is
+        created automatically — <strong>no seed phrases, no extensions.</strong>
       </>
     ),
   },
   {
     number: "02",
-    title: "Reshare",
+    title: "Buy Gold",
     description: (
       <>
-        MPC protocol generates <strong>new key shards</strong> inside TEE
-        enclaves. Old shards stay active until receiver confirms.{" "}
-        <strong>Private key never exists in whole form.</strong>
+        Purchase <strong>ETNYG tokens</strong> with your bank card. Each ETNYG
+        equals <strong>1 gram of real gold</strong>, backed by physical reserves.
       </>
     ),
   },
   {
     number: "03",
-    title: "Done",
+    title: "Own & Track",
     description: (
       <>
-        Receiver confirms. Old shards are <strong>tombstoned</strong>. Ownership
-        transferred. <strong>Same wallet address. Zero on-chain trace.</strong>
+        See your gold balance in <strong>grams and dollars</strong>. Get notified
+        about audits, reserves status, and <strong>price movements.</strong>
+      </>
+    ),
+  },
+  {
+    number: "04",
+    title: "Sell or Send",
+    description: (
+      <>
+        Sell back to fiat <strong>instantly</strong> or send gold to anyone in
+        seconds. <strong>Full liquidity, anytime.</strong>
       </>
     ),
   },
@@ -44,7 +53,7 @@ export function HowItWorks() {
       <div className="max-w-[1200px] mx-auto">
         <AnimatedSection>
           <SectionLabel>How It Works</SectionLabel>
-          <SectionTitle>Transfer in 3 steps</SectionTitle>
+          <SectionTitle>Four steps to owning gold</SectionTitle>
         </AnimatedSection>
 
         <div className="mt-16 relative">
