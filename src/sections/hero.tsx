@@ -16,7 +16,7 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center justify-center px-6">
       {/* Outer grid with radial fade */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 hero-grid-outer"
         style={{
           backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
           backgroundSize: '50px 50px',
@@ -45,7 +45,7 @@ export function Hero() {
 
       {/* Gradient overlay for text readability */}
       <div
-        className="absolute inset-0 z-20 pointer-events-none"
+        className="absolute inset-0 z-20 pointer-events-none hero-overlay"
         style={{
           background: `linear-gradient(to bottom,
             #0a0a0a 0%,
@@ -107,6 +107,7 @@ export function Hero() {
           height="24"
           viewBox="0 0 24 24"
           fill="none"
+          className="hero-scroll-indicator"
           stroke="rgba(255,255,255,0.3)"
           strokeWidth="2"
         >
