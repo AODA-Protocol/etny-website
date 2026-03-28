@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { useCanvasPerf } from '@/hooks/use-canvas-perf'
 
 interface IsometricBoxesProps {
@@ -15,6 +15,20 @@ interface IsometricBoxesProps {
  */
 export function IsometricBoxes({ className = '' }: IsometricBoxesProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [isDark, setIsDark] = useState(true)
+  const isDarkRef = useRef(true)
+
+  useEffect(() => {
+    const checkTheme = () => {
+      const dark = document.documentElement.getAttribute('data-theme') !== 'light'
+      setIsDark(dark)
+      isDarkRef.current = dark
+    }
+    checkTheme()
+    const observer = new MutationObserver(checkTheme)
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] })
+    return () => observer.disconnect()
+  }, [])
 
   const { dpr, isVisible, observerRef } = useCanvasPerf()
   const isVisibleRef = useRef(isVisible)
@@ -49,16 +63,30 @@ export function IsometricBoxes({ className = '' }: IsometricBoxesProps) {
     function edgeColor(sx: number, alpha: number): string {
       const t = Math.max(0, Math.min(1, sx / w))
       let r: number, g: number, b: number
-      if (t < 0.5) {
-        const p = t * 2
-        r = Math.round(180 * (1 - p) + 80 * p)
-        g = Math.round(0 * (1 - p) + 120 * p)
-        b = 255
+      if (isDarkRef.current) {
+        if (t < 0.5) {
+          const p = t * 2
+          r = Math.round(180 * (1 - p) + 80 * p)
+          g = Math.round(0 * (1 - p) + 120 * p)
+          b = 255
+        } else {
+          const p = (t - 0.5) * 2
+          r = Math.round(80 * (1 - p) + 0 * p)
+          g = Math.round(120 * (1 - p) + 220 * p)
+          b = 255
+        }
       } else {
-        const p = (t - 0.5) * 2
-        r = Math.round(80 * (1 - p) + 0 * p)
-        g = Math.round(120 * (1 - p) + 220 * p)
-        b = 255
+        if (t < 0.5) {
+          const p = t * 2
+          r = Math.round(120 * (1 - p) + 60 * p)
+          g = Math.round(0 * (1 - p) + 80 * p)
+          b = Math.round(200 * (1 - p) + 180 * p)
+        } else {
+          const p = (t - 0.5) * 2
+          r = Math.round(60 * (1 - p) + 0 * p)
+          g = Math.round(80 * (1 - p) + 160 * p)
+          b = Math.round(180 * (1 - p) + 200 * p)
+        }
       }
       return `rgba(${r}, ${g}, ${b}, ${alpha})`
     }
@@ -144,9 +172,9 @@ export function IsometricBoxes({ className = '' }: IsometricBoxesProps) {
       const hh = cubeHH
       const liftFraction = Math.min(lift / maxLift, 1)
 
-      const topFill = 'rgba(14, 14, 22, 0.95)'
-      const leftFill = 'rgba(8, 8, 14, 0.95)'
-      const rightFill = 'rgba(11, 11, 18, 0.95)'
+      const topFill = isDarkRef.current ? 'rgba(14, 14, 22, 0.95)' : 'rgba(220, 220, 215, 0.95)'
+      const leftFill = isDarkRef.current ? 'rgba(8, 8, 14, 0.95)' : 'rgba(200, 200, 195, 0.95)'
+      const rightFill = isDarkRef.current ? 'rgba(11, 11, 18, 0.95)' : 'rgba(210, 210, 205, 0.95)'
 
       const edgeAlpha = 0.3 + liftFraction * 0.5
       const ec = edgeColor(sx, edgeAlpha)
