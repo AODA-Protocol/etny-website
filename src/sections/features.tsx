@@ -63,7 +63,7 @@ export function Features() {
                 <span className="font-mono text-xs uppercase tracking-wide text-white/30">
                   {feature.label}
                 </span>
-                <div className="mt-2 text-[clamp(2rem,4vw,3rem)] font-sans font-normal text-white">
+                <div className="mt-2 text-[clamp(2rem,4vw,3rem)] font-mono font-normal text-white">
                   {feature.value}
                 </div>
                 <p className="mt-3 font-mono text-sm leading-relaxed text-white/50 [&>strong]:text-white [&>strong]:font-normal">
