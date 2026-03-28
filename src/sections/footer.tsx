@@ -22,6 +22,13 @@ const COLUMNS = [
       { label: "Terms of Use", href: "/terms" },
     ],
   },
+  {
+    title: "Contact",
+    links: [
+      { label: "hello@etny.app", href: "mailto:hello@etny.app" },
+      { label: "contact@etny.app", href: "mailto:contact@etny.app" },
+    ],
+  },
 ];
 
 export function Footer() {
@@ -32,7 +39,7 @@ export function Footer() {
       <div className="relative max-w-[1200px] mx-auto">
         <div className="h-px bg-white/10 mb-16" />
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-12 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16">
           {COLUMNS.map((col) => (
             <div key={col.title}>
               <h4 className="font-mono text-xs uppercase tracking-[0.15em] text-white/30 mb-4">

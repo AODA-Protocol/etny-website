@@ -88,7 +88,7 @@ export default function TermsPage() {
           <section>
             <h2>10. Contact</h2>
             <p>
-              For questions regarding these terms, contact us through our community channels.
+              For questions regarding these terms, contact us at <a href="mailto:contact@etny.app" className="text-accent-blue hover:underline">contact@etny.app</a>.
             </p>
           </section>
         </div>
