@@ -60,7 +60,7 @@ export function Footer() {
           <div className="flex items-center gap-3">
             <img src="/images/white.svg" alt="ETNY" className="h-6 w-auto" />
             <span className="font-mono text-xs text-white/30">
-              Own real gold, digitally.
+              Own real assets, digitally.
             </span>
           </div>
           <span className="font-mono text-xs text-white/30">
