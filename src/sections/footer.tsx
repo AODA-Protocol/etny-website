@@ -33,7 +33,7 @@ const COLUMNS = [
 
 export function Footer() {
   return (
-    <footer className="relative pt-20 pb-12 px-6">
+    <footer className="relative pt-20 pb-12 px-6 overflow-hidden">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-amber-500/5 blur-[120px] pointer-events-none" />
 
       <div className="relative max-w-[1200px] mx-auto">

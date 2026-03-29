@@ -13,7 +13,7 @@ const LogoParticles = dynamic(
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6">
+    <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
       {/* Outer grid with radial fade */}
       <div
         className="absolute inset-0 hero-grid-outer"
